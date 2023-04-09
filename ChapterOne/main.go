@@ -4,7 +4,6 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello, world!")
+	displayTime()
 }
 
-// We can build the Go programs with
-// * go build main.go
