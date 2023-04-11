@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
-import "reflect"
+import (
+	"fmt"
+	"reflect"
+	"time"
+	"strconv"
+)
 
 func main() {
 	var num1 = 5				// type inferred
@@ -30,4 +34,69 @@ func main() {
 	-- Albert Einstein`
 
 	fmt.Println(quotation)
+
+	//* Performing TYPE CONVERSIONS
+
+	start := time.Now() // What type of variable is start?
+
+	fmt.Printf("%T\n", start)
+
+	// %T is a GO syntax representation of the type of the value
+	// \n is a line feed or newline
+	// start is the target variable
+
+	fmt.Println(reflect.TypeOf(start)) // time.Time
+	fmt.Println(reflect.ValueOf(start).Kind()) // struct
+
+	// * Converting a variable's type
+
+	var newAge int // Declaration
+	fmt.Print("Please enter your age: ")
+	fmt.Scanf("%d", &newAge) // Scanf will scan the input and transfer the value to newAge, %d stands for base 10 numbers which is a format specifier
+	fmt.Println("You entered:", newAge)
+
+	// If we enter a string it won't read anything
+
+	var input string
+	fmt.Print("Please enter your age: ")
+	fmt.Scanf("%s", &input) // %s stands for string, this will store a string value in input
+
+	// After the input is read, you can use the strconv package's Atoi() function to convert the string into an integer value
+
+	newAges, err := strconv.Atoi(input) // Convert string to int
+
+	// The Atoi() function returns two values, the result of the conversion and the error
+
+	// To check if the error ocurred during the conversion, check if the err variable contains a nil value
+
+	if err != nil {
+		fmt.Println(err) // An error ocurred
+	} else {
+		fmt.Println("Your age is", newAges)
+	}
+
+	// We can convert string values to specific types, such as Boolean, floating point numbers, integers, you may use the Parse functions
+
+	b, bErr := strconv.ParseBool("t")
+	fmt.Println(b) // true
+	fmt.Println(bErr) // <nil>
+	fmt.Printf("%T\n", bErr) // bool
+
+	f, fErr := strconv.ParseFloat("3.1415", 64) //First value for ParseFloat is the value and then the specified bitsize for the float
+
+	fmt.Println(f) // 3.1415
+	fmt.Println(fErr) // <nil>
+	fmt.Printf("%T\n", f) // float64
+
+	i, iErr := strconv.ParseInt("-18.56", 10, 64) // First value for ParseInt is the value, then the base and the bitsize for that int
+
+	fmt.Println(i) // 0
+	fmt.Println(iErr)			//ERROR: Parsing "18.56": invalid syntax, should be a float
+	fmt.Printf("%T\n", i)	//int64
+
+	u1, u1Err := strconv.ParseUint("18", 10, 64)
+	fmt.Println(u1) // 18
+	fmt.Println(u1Err) // <nil>
+	fmt.Printf("%T\n", u1) // uint64
+
 }
