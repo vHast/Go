@@ -99,4 +99,41 @@ func main() {
 	fmt.Println(u1Err) // <nil>
 	fmt.Printf("%T\n", u1) // uint64
 
+	// To convert between the various numeric data types like int and float, you can simply use the int(), float32() and float64() functions
+
+	number1 := 5
+	number2 := float32(number1)
+	number3 := float64(number2)
+	number4 := float32(number3)
+	number5 := int(number4)
+
+	fmt.Printf("%T\n", number1) // int
+	fmt.Printf("%T\n", number2) // float32
+	fmt.Printf("%T\n", number3) // float64
+	fmt.Printf("%T\n", number4) // float32
+	fmt.Printf("%T\n", number5) // int 
+
+	// * INTERPOLATING STRINGS
+
+	queue := 5
+	nameQueue := "John"
+
+	// If you would like to concatenate you would do something like this 
+
+	// * s := nameQueue + ", your queue number is:" + queue
+
+	// This is wrong since queue is an integer and you CAN'T CONCATENATE string AND int VALUES, to fix this you may convert the int variable into a string
+
+	// * s := nameQueue * ", your queue number is" + strconv.Itoa(queue)
+
+	// This could work however it can be terrible when using a lot of variables
+
+	// * A better solution would be to use Sprintf() function from the fmt package
+
+	s := fmt.Sprintf("%s, your queue number is %d", nameQueue, queue)
+
+	// The Sprintf() function formats a string baesd on the formatting verbs(such as %d and %s)
+
+	fmt.Println(s);
+
 }
