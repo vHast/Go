@@ -19,6 +19,11 @@ func main() {
 
 	// * Logical Operators in GO
 
+	numExtra := 6
+	fmt.Println(numExtra == 0) // False
+
+	
+
 	var operatorNumOne int = 5
 	conditionOne := operatorNumOne > 2 && operatorNumOne < 9
 
