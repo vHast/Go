@@ -19,14 +19,12 @@ func main() {
 
 	// * Logical Operators in GO
 
-	numExtra := 6
-	fmt.Println(numExtra == 0) // False
+	fmt.Println(num == 0) // false 
 
-	
+	conditionOne := num > 2 && num < 9 // This checks if a number is more than 2 and less of a 9
 
-	var operatorNumOne int = 5
-	conditionOne := operatorNumOne > 2 && operatorNumOne < 9
+	fmt.Println(conditionOne) // true
 
-	fmt.Println(conditionOne)
-
+	conditionTwo := num < 2 || num > 9 // This checks if a number is less than 2 and more than a 9
+	fmt.Println(conditionTwo) // false
 }
