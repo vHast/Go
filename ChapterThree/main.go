@@ -27,4 +27,12 @@ func main() {
 
 	conditionTwo := num < 2 || num > 9 // This checks if a number is less than 2 and more than a 9
 	fmt.Println(conditionTwo) // false
+
+	conditionThree := num > 9 || num < 2 // This checks if a number is higher  than 9 or is a number inferior than 2
+
+	fmt.Println(conditionThree); // false
+
+	conditionFour := !( num > 9 || num < 2)
+	fmt.Println(conditionFour); // true
+
 }
