@@ -74,6 +74,30 @@ func main() {
 		fmt.Println("Stay indoors!")
 	}
 
+	// * Using IF with an initialization statement to keep the scope of your variables tight
+
+	// When using the if statement, you can combine intialization together with the conditon statement, like this
+
+	// This function returns an integer value together with a Boolean value, to indicate if there is an error code...
+
+	v, err := doSomething()
+
+	if err {
+		fmt.Println("Error") // handle the error
+	} else {
+		fmt.Println(v)
+	}
+
+	// If the function has an error, you handle the error, otherwise, you can go ahead and use the value returned by the function
+
+	if v, err := doSomething(); !err {
+		fmt.Println(v)
+	} else {
+		fmt.Println("Error") // handle the error
+	}
+
+	doSomething()
+
 }
 
 func raining() bool {
@@ -84,4 +108,8 @@ func raining() bool {
 func snowing() bool {
 	fmt.Println("Check if it is snowing now...")
 	return true
+}
+
+func doSomething() (int, bool) {
+	return 5, false
 }
