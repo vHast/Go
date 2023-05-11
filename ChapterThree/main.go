@@ -96,8 +96,6 @@ func main() {
 		fmt.Println("Error") // handle the error
 	}
 
-	doSomething()
-
 }
 
 func raining() bool {
