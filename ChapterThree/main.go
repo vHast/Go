@@ -96,6 +96,84 @@ func main() {
 		fmt.Println("Error") // handle the error
 	}
 
+	// * Switch statements
+
+	numSwitch := 5
+	dayOfWeek := ""
+
+	switch numSwitch {
+
+	case 1:
+		dayOfWeek = "Monday"
+	case 2:
+		dayOfWeek = "Tuesday"
+	case 3:
+		dayOfWeek = "Wednesday"
+	case 4:
+		dayOfWeek = "Thursday"
+	case 5:
+		dayOfWeek = "Friday"
+	case 6:
+		dayOfWeek = "Saturday"
+	case 7:
+		dayOfWeek = "Sunday"
+	default:
+		dayOfWeek = "--error--"
+	}
+
+	fmt.Println(dayOfWeek) // Friday
+
+	// * Switch fallthroughs
+	// When a fallthrough keyword is present in the switch statement, the next case is evaluated instead of transferring control out of the switch statement
+
+	grade := "C"
+
+	switch grade {
+	case "A":
+		fallthrough
+	case "B":
+		fallthrough
+	case "C":
+		fallthrough
+	case "D":
+		fmt.Println("Passed")
+	case "F":
+		fmt.Println("Failed")
+	default:
+		fmt.Println("Absent")
+	}
+
+	// * Matching multiple cases
+
+	switch grade {
+	case "A", "B", "C", "D":
+		fmt.Println("Passed")
+	case "F":
+		fmt.Println("Failed")
+	default:
+		fmt.Println("Undefined")
+	}
+
+	// * Switching without conditions
+	// This construct makes it easy to perform conditional checks with the case expressions
+
+	score := 79
+	gradeCondition := ""
+
+	switch {
+	case score < 50:
+		gradeCondition = "F"
+	case score < 60:
+		gradeCondition = "D"
+	case score < 70:
+		gradeCondition = "C"
+	case score < 80:
+		gradeCondition = "B"
+	default:
+		grade = "A"
+	}
+	fmt.Println(gradeCondition) // B
+
 }
 
 func raining() bool {
