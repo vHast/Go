@@ -46,4 +46,16 @@ func main() {
 		}
 	}
 
+	// ToUpper() converts the user input to uppercase before the comparison
+	// This way the user can enter the QUIT string in any cases and the comparison will still work correctly
+
+	// * Continue keyword
+
+	for contN := 1; contN < 10; contN++ {
+		if contN%2 == 0 {
+			continue
+		}
+		fmt.Println(contN)
+	}
+
 }
