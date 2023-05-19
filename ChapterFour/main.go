@@ -58,4 +58,25 @@ func main() {
 		fmt.Println(contN)
 	}
 
+	// * Iterating over a Range of Values
+	// Iterating through arrays/slices
+
+	// OS is an array of three elements
+
+	var OS [3]string
+	OS[0] = "iOS"
+	OS[1] = "Android"
+	OS[2] = "Window"
+
+	// To iterate through each of the elements in the array, you use the for-range loop
+
+	for i, v := range OS {
+		fmt.Println(i, v)
+	}
+
+	// The range keyword returns the following values
+
+	// i is the INDEX OF THE VALUE YOU'RE ACCESSING - in this case, the value is the OS array
+	// v Each of the values in the OS array
+
 }
